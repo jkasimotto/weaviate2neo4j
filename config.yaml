@@ -1,0 +1,22 @@
+neo4j:
+  uri: "neo4j+ssc://1af03722.databases.neo4j.io"
+  username: "neo4j" # Looks in environment variables if this is None
+  password: "password" # Looks in environment variables if this is None
+  row_classname: "Row" # The neo4j label row objects will become.
+  col_classname: "Col" # The neo4j label col objects will become.
+weaviate:
+  url: "http://localhost:8080"
+  username: None # Looks in environment variables also
+  password: None # Looks in environment variables also
+  row_classname: "Memory" # The classname for row objects. If None, then row_graphql must be set.
+  row_properties: # Properties to include in neo4j node.
+    - "title"
+    - "summary"
+    - "conversation"
+  row_batch_size: 100
+  col_classname: "Memory" # The classname for col objects
+  col_properties: # Properties to include in neo4j node.
+    - "title"
+    - "summary"
+    - "conversation"
+  col_batch_size: 100
